@@ -1,0 +1,10 @@
+
+*.cache
+.vs/SENG1110 Assignment2 (CSharp)/v16/.suo
+bin/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).dll
+bin/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).pdb
+obj/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).assets.cache
+obj/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).csproj.FileListAbsolute.txt
+bin/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).dll
+bin/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).pdb
+bin/Debug/netcoreapp3.1/SENG1110 Assignment2 (CSharp).dll

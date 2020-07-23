@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110 Assignment2 (CSharp).csproj": {}
+    "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110-Assignment-in-C-\\SENG1110 Assignment2 (CSharp).csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110 Assignment2 (CSharp).csproj": {
+    "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110-Assignment-in-C-\\SENG1110 Assignment2 (CSharp).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110 Assignment2 (CSharp).csproj",
+        "projectUniqueName": "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110-Assignment-in-C-\\SENG1110 Assignment2 (CSharp).csproj",
         "projectName": "SENG1110 Assignment2 (CSharp)",
-        "projectPath": "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110 Assignment2 (CSharp).csproj",
+        "projectPath": "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110-Assignment-in-C-\\SENG1110 Assignment2 (CSharp).csproj",
         "packagesPath": "C:\\Users\\Moosa\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\obj\\",
+        "outputPath": "D:\\Visual Studio Projects\\C# Recreation\\SENG1110 Assignment2 (CSharp)\\SENG1110-Assignment-in-C-\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Moosa\\AppData\\Roaming\\NuGet\\NuGet.Config",

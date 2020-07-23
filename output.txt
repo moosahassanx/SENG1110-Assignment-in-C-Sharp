@@ -1,0 +1,7 @@
+d1 banana 12 12 12
+d1 apple 13 12 1
+
+d2 yogo 31 4 5
+
+
+

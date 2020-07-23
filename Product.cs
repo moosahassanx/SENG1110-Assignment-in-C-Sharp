@@ -1,10 +1,12 @@
 ﻿public class Product
 {
+    // attributes
     private string name;
     private double price;
     private double weight;
     private int quantity;
 
+    // default constructor
     public Product()
     {
         this.name = "";
@@ -12,7 +14,8 @@
         this.weight = 0;
         this.quantity = 0;
     }
-
+    
+    // modified constructor
     public Product(string n, double p, double w, int q)
     {
         this.name = n;

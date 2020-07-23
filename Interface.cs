@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 public class Interface
 {
@@ -16,6 +17,7 @@ public class Interface
 
         do
         {
+            // menu ui
             Console.WriteLine("------------------------------------------------------------");
             Console.WriteLine("1.  Add a depot.");
             Console.WriteLine("2.  Remove a depot.");
@@ -29,12 +31,14 @@ public class Interface
             Console.WriteLine("10. Import depot and product information from a file.");
             Console.WriteLine("11. Exit \n");
 
+            // navigate the menu
             Console.Write("Input: ");
             selector = Convert.ToInt32(Console.ReadLine());
 
-            // 1. Add a depot.
+            // 1. Add a depot
             if (selector == 1)
             {
+                // loop every depot
                 int depotCounter = 0;
                 for (int i = 0; i < 4; i++)
                 {
@@ -149,8 +153,15 @@ public class Interface
                             {
                                 Console.Write("Product name: ");
                                 productName = Console.ReadLine();
+
+                                // error message for pre-existing product
+                                if (depotArray[0].CheckProduct(productName) == true)
+                                {
+                                    Console.WriteLine("Product already exists.");
+                                }
                             } while (depotArray[i].checkFull() == true || depotArray[0].CheckProduct(productName) == true);
 
+                            // add the product
                             depotArray[i].addProduct(productName);
 
                             break;
@@ -158,6 +169,7 @@ public class Interface
                     }
                 }
 
+                // error
                 if (isDepot == false)
                 {
                     Console.WriteLine("Depot \"{0}\" does not exist.", tempName);
@@ -167,32 +179,65 @@ public class Interface
             // 4. Remove multiple product items at once.
             if (selector == 4)
             {
-                Console.WriteLine("--------Remove multiple product items at once.--------");
-                Console.Write("Product name: ");
-                string productName = Console.ReadLine();
+                Console.WriteLine("--------Remove multiple product items at once--------");
 
+                int depotP = 0;
+
+                // input depot
                 Console.Write("Depot name: ");
                 tempName = Console.ReadLine();
 
+                bool depotExists = false;
+
+                // loop through each depot
                 for (int i = 0; i < 4; i++)
                 {
                     if (depotArray[i] != null)
                     {
                         if (depotArray[i].getName() == tempName)
                         {
-                            // COME BACK HERE
+                            depotExists = true;
+                            depotP = i;
                             break;
                         }
                     }
                 }
 
-                int amount;
-                do
-                {
-                    Console.Write("Quantity: ");
-                    amount = int.Parse(Console.ReadLine());
-                } while (amount < 0);
+                // input product
+                Console.Write("Product name: ");
+                string productName = Console.ReadLine();
 
+
+                // search for product and set in boolean
+                bool productFound = false;
+                productFound = depotArray[depotP].SearchProduct(productName);
+
+
+                // control
+                if (depotExists == false)
+                {
+                    Console.WriteLine("Depot not found.");
+                }
+                else
+                {
+                    if (productFound == false)
+                    {
+                        Console.WriteLine("Product not found.");
+                    }
+                    else
+                    {
+                        // input quantity
+                        int quantity = 0;
+                        do
+                        {
+                            Console.Write("Quantity: ");
+                            quantity = int.Parse(Console.ReadLine());
+                        } while (quantity < 0);
+
+                        // removing products
+                        depotArray[depotP].RemoveProducts(productName, quantity);
+                    }
+                }
             }
 
             // 5.  Query for a list of depots.
@@ -200,21 +245,20 @@ public class Interface
             {
                 Console.WriteLine("---------Query for a list of depots---------");
 
-                int depotCounter = 0;
+                bool depotExists = false;
+
+                // loop depots
                 for (int i = 0; i < 4; i++)
                 {
                     if (depotArray[i] != null)
                     {
-                        Console.WriteLine("Depot \"{0}\" has AMOUNT products", depotArray[i].getName());
-                    }
-
-                    else
-                    {
-                        depotCounter++;
+                        Console.WriteLine("Depot \"{0}\" has {1} products.", depotArray[i].getName(), depotArray[i].CalculateProducts());
+                        depotExists = true;
                     }
                 }
 
-                if (depotCounter == 4)
+                // error message
+                if (depotExists == false)
                 {
                     Console.WriteLine("No depots exist.");
                 }
@@ -228,12 +272,14 @@ public class Interface
                 Console.Write("Depot name: ");
                 tempName = Console.ReadLine();
 
-                for (int i = 0; i < 5; i++)
+                // loop through each depot
+                for (int i = 0; i < 4; i++)
                 {
                     if (depotArray[i] != null)
                     {
                         if (tempName == depotArray[i].getName())
                         {
+                            // list all products in the depot
                             depotArray[i].getProductDetails();
                             break;
                         }
@@ -276,24 +322,69 @@ public class Interface
             if (selector == 8)
             {
                 Console.WriteLine("------------Query for the cumulative value of all products in a depot------------");
+                Console.Write("Depot name: ");
+                tempName = Console.ReadLine();
+                bool depotExists = false;
 
+                // loop through every depot
+                for (int i = 0; i < 4; i++)
+                {
+                    if (depotArray[i] != null)
+                    {
+                        if (depotArray[i].getName() == tempName)
+                        {
+                            depotExists = true;
+                            Console.WriteLine("Depot \"{0}\" has cumulative product value ${1}.", depotArray[i].getName(), depotArray[i].GetValue());
+                            break;
+                        }
+                    }
+                }
+
+                // depot not found
+                if (depotExists == false)
+                {
+                    Console.WriteLine("Depot does not exist.");
+                }
             }
 
             // 9. Export depot and product information to a file.
             if (selector == 9)
             {
-                Console.WriteLine("Export depot and product information to a file.");
+                Console.WriteLine("---------------Export depot and product information to a file---------------");
+
+                string[] lines = new string[4];
+
+                // looping through each depot to create lines
+                for (int i = 0; i < 4; i++)
+                {
+                    if (depotArray[i] != null)
+                    {
+                        lines[i] = depotArray[i].WriteLine();
+                    }
+                }                
+
+                // create file name
+                System.IO.File.WriteAllLines(@"D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\output.txt", lines);
+
+                Console.WriteLine("File exported.");
             }
 
             // 10. Import depot and product information from a file.
             if (selector == 10)
             {
-                Console.WriteLine("Import depot and product information from a file");
+                Console.WriteLine("-------Import depot and product information from a file-------");
+
+                Console.WriteLine("Example txt file was cannot be found.");
+
+                /*
+                    https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file 
+                */
             }
 
         } while (selector != 11);
     }
 
+    // start of program
     static void Main(string[] args)
     {
         Interface intFace = new Interface();

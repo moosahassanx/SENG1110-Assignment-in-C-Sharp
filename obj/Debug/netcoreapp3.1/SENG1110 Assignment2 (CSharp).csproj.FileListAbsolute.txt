@@ -11,3 +11,16 @@ D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\bin\Debug\
 D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).dll
 D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).pdb
 D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).genruntimeconfig.cache
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\bin\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).exe
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\bin\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).deps.json
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\bin\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).runtimeconfig.json
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\bin\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).runtimeconfig.dev.json
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\bin\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).dll
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\bin\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).pdb
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).csprojAssemblyReference.cache
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).AssemblyInfoInputs.cache
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).AssemblyInfo.cs
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).dll
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).pdb
+D:\Visual Studio Projects\C# Recreation\SENG1110 Assignment2 (CSharp)\SENG1110-Assignment-in-C-\obj\Debug\netcoreapp3.1\SENG1110 Assignment2 (CSharp).genruntimeconfig.cache

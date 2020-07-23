@@ -3,26 +3,31 @@ using System.Net.Http.Headers;
 
 public class Depot
 {
+    // attributes
     private string name;
     private Product[] productArray;
 
+    // default constructor
     public Depot()
     {
         this.name = "";
         productArray = new Product[5];
     }
 
+    // modified constructor
     public Depot(string n)
     {
         this.name = n;
         productArray = new Product[5];
     }
 
+    // mutators
     public void setName(string n)
     {
         this.name = n;
     }
 
+    // accessors
     public string getName()
     {
         return name;
@@ -84,6 +89,50 @@ public class Depot
         return false;
     }
 
+    public void RemoveProducts(string productName, int quantity)
+    {
+        // loop each product
+        for (int i = 0; i < 5; i++)
+        {
+            if (productArray[i] != null)
+            {
+                // product found
+                if (productName == productArray[i].getName())
+                {
+                    if (quantity > productArray[i].getQuantity())
+                    {
+                        // set to 0
+                        productArray[i].setQuantity(0);
+                        Console.WriteLine("Product \"{0}\" has been completely removed from depot \"{1}\".", productArray[i].getName(), this.name);
+                    }
+                    else
+                    {
+                        // remove amount specified
+                        productArray[i].setQuantity(productArray[i].getQuantity() - quantity);
+                        Console.WriteLine("{0} items of product \"{1}\" removed from depot \"{2}\".", quantity, productArray[i].getName(), this.name);
+                    }
+                }
+            }
+        }
+    }
+
+    public bool SearchProduct(string productName)
+    {
+        // loop through every product
+        for (int i = 0; i < 5; i++)
+        {
+            if (productArray[i] != null)
+            {
+                if (productName == productArray[i].getName())
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     public string GetProduct(string productName)
     {
         // loop through every product
@@ -93,12 +142,28 @@ public class Depot
             {
                 if (productName == productArray[i].getName())
                 {
-                    return "" + productArray[i].getName();
+                    return " " + productArray[i].getName();
                 }
             }
         }
 
         return "";
+    }
+
+    public string WriteLine()
+    {
+        string depotLine = "";
+
+        // loop through each product
+        for (int i = 0; i < 5; i++)
+        {
+            if (productArray[i] != null)
+            {
+                depotLine += this.name + " " + productArray[i].getName() + " " + productArray[i].getPrice() + " " + productArray[i].getWeight() + " " + productArray[i].getQuantity() + "\n";
+            }
+        }
+
+        return depotLine;
     }
 
     public bool isEmpty()
@@ -167,12 +232,52 @@ public class Depot
 
     public void getProductDetails()
     {
+        bool productExists = false;
+
         for (int i = 0; i < 5; i++)
         {
             if (productArray[i] != null)
             {
                 Console.WriteLine("Product \"{0}\" has price ${1}, weight {2}kg, and quantity {3}", productArray[i].getName(), productArray[i].getPrice(), productArray[i].getWeight(), productArray[i].getQuantity());
+                productExists = true;
             }
         }
+
+        if (productExists == false)
+        {
+            Console.WriteLine("No products in depot.");
+        }
+    }
+
+    public double GetValue()
+    {
+        double total = 0;
+
+        // loop through each product
+        for (int i = 0; i < 5; i++)
+        {
+            if (productArray[i] != null)
+            {
+                total += (productArray[i].getQuantity() * productArray[i].getPrice());
+            }
+        }
+
+        return total;
+    }
+
+    public int CalculateProducts()
+    {
+        int total = 0;
+
+        // loop through each product
+        for (int i = 0; i < 5; i++)
+        {
+            if (productArray[i] != null)
+            {
+                total += productArray[i].getQuantity();
+            }
+        }
+
+        return total;
     }
 }
